@@ -1,7 +1,7 @@
 
 # AI Voice Bot 
 
-This repository contains a MVP version version of a voice bot built using Retell AI and WebRTC.The actuall Project I have Integerated wit Twillo Phone number and Mobile Number For a Hospital Customer Support to automate their Appointment Booking System 
+This repository contains a MVP version version of a voice bot built using Retell AI and WebRTC.The actuall Project I have Integerated with Twillo Phone number and Mobile Number For a Hospital Customer Support to automate their Appointment Booking System 
 
 ## Project Description
 
