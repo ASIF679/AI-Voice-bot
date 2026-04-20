@@ -1,5 +1,5 @@
-cd E:\Projects\AI-Voice-bot; Set-Content -LiteralPath .\README.md -Value @'
-# AI Voice Bot Demo
+
+# AI Voice Bot 
 
 This repository contains a MVP version version of a voice bot built using Retell AI and WebRTC.The actuall Project I have Integerated wit Twillo Phone number and Mobile Number For a Hospital Customer Support to automate their Appointment Booking System 
 
