@@ -1,0 +1,241 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  padding-left: 10%;
+  background-color: #6B46C1;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hospital Appointment Card Styles */
+.hospital-appointment-card {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 24px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.card-content {
+  position: relative;
+  z-index: 1;
+  padding: 40px 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 450px;
+  justify-content: space-between;
+}
+
+.appointment-title {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  text-align: left;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.appointment-subtitle {
+  color: #e0e0e0;
+  font-size: 16px;
+  margin: 0;
+  text-align: left;
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.call-button-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+  margin-bottom: 0;
+}
+
+.call-button {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.call-button:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.call-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.call-button:disabled {
+  cursor: not-allowed;
+}
+
+.call-button-starting,
+.call-button-ending {
+  animation: pulse-button 1.5s ease-in-out infinite;
+}
+
+.call-button-active {
+  animation: pulse-button-active 1.5s ease-in-out infinite;
+}
+
+.phone-icon {
+  width: 50px;
+  height: 50px;
+  transform: rotate(-15deg);
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.phone-icon-processing {
+  animation: pulse-icon 1.5s ease-in-out infinite;
+}
+
+.phone-icon-active {
+  animation: pulse-icon-active 1.5s ease-in-out infinite;
+}
+
+.processing-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  border: 3px solid rgba(26, 26, 26, 0.3);
+  border-top-color: rgba(26, 26, 26, 0.8);
+  border-radius: 50%;
+  animation: spin-ring 1s linear infinite;
+  z-index: 1;
+}
+
+.processing-ring-active {
+  border: 3px solid rgba(76, 175, 80, 0.3);
+  border-top-color: rgba(76, 175, 80, 0.8);
+  animation: spin-ring 0.8s linear infinite;
+}
+
+.click-to-call-text {
+  color: #ffffff;
+  font-size: 15px;
+  margin: 0;
+  text-align: center;
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.error-message {
+  color: #ff6b6b;
+  font-size: 14px;
+  margin-top: 16px;
+  text-align: center;
+  width: 100%;
+  padding: 12px;
+  background-color: rgba(255, 107, 107, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+@keyframes pulse-button {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), 0 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+}
+
+@keyframes pulse-button-active {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(76, 175, 80, 0.3);
+  }
+  50% {
+    box-shadow: 0 8px 24px rgba(76, 175, 80, 0.3), 0 0 0 15px rgba(76, 175, 80, 0.1);
+  }
+}
+
+@keyframes pulse-icon {
+  0%, 100% {
+    transform: rotate(-15deg) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(-15deg) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes pulse-icon-active {
+  0%, 100% {
+    transform: rotate(-15deg) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(-15deg) scale(1.15);
+    opacity: 0.9;
+  }
+}
+
+@keyframes spin-ring {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
